@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 let dbjson = require("./db/db.json")
 //const api = require('./routes/index.js');
-
+const fs = require("fs")
 const PORT = process.env.port || 3001;
 
 const app = express();
@@ -29,7 +29,14 @@ app.get("/api/notes", (req,res) => {
 res.json(dbjson)
 })
 app.post("/api/notes", (req,res) => {
-    
+    let newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: Math.floor(Math.random()*5000)
+    }
+    dbjson.push(newNote)
+    fs.writeFileSync("./db/db.json", JSON.stringify(dbjson))
+    res.json(dbjson)
 })
 
 app.listen(PORT, () =>
