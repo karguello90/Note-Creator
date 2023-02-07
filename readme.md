@@ -10,7 +10,9 @@
 ## Description:
 Note Creator is an application that allows user to write and save their notes. 
 
-The application was created through use of back end code from Express.JS, the app will store notes and recall previous notes through JSON. 
+The application was created through use of back end code from Express.JS, the app will store notes and recall previous notes through JSON.
+
+Viewer and controller routes have been created through use of GET and POST.
 
 The application has been deployed using the Heroku site: https://guarded-reaches-33084.herokuapp.com/
 
